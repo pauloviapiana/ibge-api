@@ -17,11 +17,16 @@ class Get:
         print(url)
         response = requests.get(url)
         dados_json = response.json()
-        for dado in dados_json['resultados'['series'['serie'['2023']]]]:
-            print(dado)
+        print(dados_json[0]['resultados'][0]['series'][0]['serie']['2023'])
 
 
 
 consulta = Get(tabela, nivel_geografico, localidade)
 consulta.acessar_tabela()
 
+
+
+
+# app.get('/home')
+# def home():
+#     return render_template('home.html')
