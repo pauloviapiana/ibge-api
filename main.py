@@ -14,9 +14,12 @@ class Get:
 
     def acessar_tabela(self):
         url = f'https://servicodados.ibge.gov.br/api/v3/agregados/{self.tabela}/periodos/2023/variaveis/603?localidades={self.nivel_geografico}[{self.localidade}]&classificacao=12446[47692]|2009[73535]'
+        print(url)
         response = requests.get(url)
         dados_json = response.json()
-        print(dados_json)
+        for dado in dados_json['resultados'['series'['serie'['2023']]]]:
+            print(dado)
+
 
 
 consulta = Get(tabela, nivel_geografico, localidade)
